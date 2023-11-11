@@ -1,0 +1,18 @@
+Please make sure to use the latest version of the firmware. The latest software might not support older firmware.
+
+V1.0: The FPGA code for the first version of the acoustophoretic control board (Rev.1: ID C1-C9), make sure not the array ID. 
+V2.0: The FPGA code for the second version of the acoustophoretic control board (Rev.2,3,4: ID C10-?).
+      Changed the pin mapping of the FPGA:
+            SyncMasterSelect: B5 -> F2; SyncMain: A15 -> T14; USB_DATA[7]: E10 -> B5;
+V2.1: Added the reference 40kHz signal to the D14 pin.
+
+V3.2.X:	In this new FPGA code, a FIFO buffer has been implemented as a cushion.
+	This makes sure that the board updates at an exact rate and improves the maximum acceleration in vertical direction.
+	Also, a function to adjust the update rate using a divider has been added (e.g. 10kHz when the divider is 4).
+	The old function to control the boards in the MATD mode has been removed.
+	Note that v3.2.1 is for the old boards (Rev.1: ID C1-9) and v3.2.2 is for the new control boards (Rev.2,3,4: ID C10-?).
+V3.3.X:	Minor bugs were fixed in this version. 
+	The colour buffer was not working properly in the previous version (3.2.X) but it's now working.
+	The version v3.3.1 is for the old control boards (Rev.1: ID C1-9) and v3.3.2 is for the new control ones (Rev.2,3,4: ID C10-?).
+	If you check the control board and there is no REF pin, it's an old control board.
+V3.4.X: In this minor fixed version, the FIFO for the messages will be reset if no data is input for a second.
